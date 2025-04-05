@@ -1,0 +1,147 @@
+/* Reset e base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #f0f4f8, #e2e8f0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1f2937;
+    min-height: 100vh;
+    padding: 1rem;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .container h1 {
+    text-align: center;
+  }
+  
+  /* Formulário */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  input {
+    padding: 0.8rem 1rem;
+    border: 2px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  }
+  
+  /* Botões */
+  button {
+    padding: 0.75rem 1.4rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  button.save {
+    background-color: #10b981;
+    color: white;
+  }
+  
+  button.save:hover {
+    background-color: #059669;
+  }
+  
+  button.cancel {
+    background-color: #e5e7eb;
+    color: #111827;
+    border: 1px solid #d1d5db;
+  }
+  
+  button.cancel:hover {
+    background-color: #d1d5db;
+  }
+  
+  button.edit {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  button.edit:hover {
+    background-color: #2563eb;
+  }
+  
+  button.delete {
+    background-color: #ef4444;
+    color: white;
+  }
+  
+  button.delete:hover {
+    background-color: #dc2626;
+  }
+  
+  /* Lista de contatos */
+  .contato-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  .contato-list li {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9fafb;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s ease;
+  }
+  
+  .contato-list li:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .contato-list li strong {
+    font-size: 1.1rem;
+    color: #111827;
+  }
+  
+  .contato-list li span {
+    font-size: 0.95rem;
+    color: #6b7280;
+  }
+  
+  .contato-list li div {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.8rem;
+  }
+  
+  /* Responsividade */
+  @media (min-width: 600px) {
+    .contato-list li {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .contato-list li div {
+      margin-top: 0;
+    }
+  }
+  
