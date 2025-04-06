@@ -9,9 +9,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-app.use(cors({
-  origin: 'http://localhost:5173' // só o frontend pode acessar
-}));
+app.use(cors());
 mongoose.connect(process.env.MONGO_URI!)
   .then(() => console.log('MongoDB conectado'))
   .catch((err) => console.error('Erro ao conectar:', err));
