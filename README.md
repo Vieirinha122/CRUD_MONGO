@@ -30,37 +30,46 @@ Este é um projeto de CRUD de uma lista telefônica feito em Node.js e React.
 
 - Node.js instalado
 - MongoDB em execução
+- Arquivo `.env` configurado
 
-### Passos para executar
+### Configurando o arquivo `.env`
 
-1. Clone o repositório:
-    ```bash
-    git clone https://github.com/Vieirinha122/CRUD_MONGO.git
-    cd CRUD_MONGO
-    ```
+Na raiz do projeto (onde está o backend), crie um arquivo `.env` com o seguinte conteúdo ou copie o arquivo `.env.example` e renomeie para `.env`:
 
-2. Instale as dependências do backend:
-    ```bash
-    cd backend
-    npm install
-    ```
+```env
+MONGO_URI=mongodb://localhost:27017/nomedobanco
+PORT=3000
+```
+⚠️ Substitua nomedobanco pelo nome desejado para o seu banco de dados MongoDB.
 
-3. Inicie o servidor backend:
-    ```bash
-    npm start
-    ```
+Passos para executar
 
-4. Abra outro terminal, vá para o diretório `frontend` e instale as dependências:
-    ```bash
-    cd frontend
-    npm install
-    ```
+Clone o repositório:
+```bash
+git clone https://github.com/Vieirinha122/CRUD_MONGO.git
+cd CRUD_MONGO
+```
 
-5. Inicie o servidor frontend:
-    ```bash
-    npm start
-    ```
+Instale as dependências do backend:
+```bash
+npm install
+```
+Crie o arquivo .env conforme as instruções acima.
 
-6. Depois que você rodar a parte do front-end, vai ser gerado um link para acessar o front.
+Inicie o servidor backend:
+```bash
+npm run dev
+```
+Em outro terminal, vá para o diretório frontend e instale as dependências:
 
-Feito com ❤️ por [Vieirinha122](https://github.com/Vieirinha122)
+```bash
+cd frontend
+npm install
+```
+Inicie o servidor frontend:
+
+```bash
+npm run dev
+```
+
+⚠️ A aplicação estará disponível no navegador no endereço gerado no terminal do frontend (geralmente http://localhost:5173).
