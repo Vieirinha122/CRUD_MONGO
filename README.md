@@ -1,75 +1,150 @@
-# CRUD MongoDB
+# *CRUD_MONGO Documentation*  
+A simple CRUD application in Node.js with MongoDB.
 
-Este é um projeto de CRUD de uma lista telefônica feito em Node.js e React.
+## *📌 Overview*  
+This project implements basic CRUD (Create, Read, Update, Delete) operations using:  
+- *Node.js* (Backend)  
+- *Express* (HTTP Framework)  
+- *MongoDB* (NoSQL Database)  
+- *Mongoose* (ODM for MongoDB)  
 
-## Tecnologias Utilizadas
+Ideal for learning how to integrate Node.js with MongoDB.  
 
-- **Node.js**: Ambiente de execução para JavaScript no servidor.
-- **React**: Biblioteca JavaScript para construir interfaces de usuário.
-- **MongoDB**: Banco de dados NoSQL orientado a documentos.
-- **TypeScript**: Superconjunto de JavaScript que adiciona tipagem estática ao código.
-- **CSS**: Linguagem de estilo para definir a apresentação de páginas web.
-- **JavaScript**: Linguagem de programação utilizada tanto no frontend quanto no backend.
-- **HTML**: Linguagem de marcação para estruturar o conteúdo na web.
+---
 
-## Estrutura do Projeto
+## *🚀 Getting Started*  
 
-- **Backend**: O backend é construído com Node.js e Express para gerenciar as operações CRUD (Criar, Ler, Atualizar, Deletar) no MongoDB.
-- **Frontend**: O frontend é construído com React para criar uma interface de usuário interativa.
+### *Prerequisites*  
+- Node.js (v18+)  
+- MongoDB (local or Atlas)  
+- Git (optional)  
 
-## Funcionalidades
+### *Installation*  
+1. Clone the repository:  
+   sh
+   git clone https://github.com/Vieirinha122/CRUD_MONGO.git
+   cd CRUD_MONGO
+   
+2. Install dependencies:  
+   sh
+   npm install
+   
+3. Configure MongoDB:  
+   - Create a .env file and set:  
+     env
+     MONGO_URI=your_mongodb_connection_string
+     
+4. Start the server:  
+   sh
+   npm start
+   
+   The server will run at http://localhost:3000.  
 
-- **Adicionar Contato**: Permite adicionar novos contatos à lista telefônica.
-- **Listar Contatos**: Exibe todos os contatos salvos.
-- **Atualizar Contato**: Permite editar as informações de um contato existente.
-- **Deletar Contato**: Permite remover um contato da lista.
+---
 
-## Como Executar o Projeto
+## *📚 API Documentation*  
 
-### Pré-requisitos
+### *Available Endpoints*  
 
-- Node.js instalado
-- MongoDB em execução
-- Arquivo `.env` configurado
+| Method | Endpoint      | Description                      |
+|--------|---------------|-----------------------------------|
+| POST   | /users      | Create a new user.               |
+| GET    | /users      | List all users.                  |
+| GET    | /users/:id  | Get a user by ID.                |
+| PUT    | /users/:id  | Update a user by ID.             |
+| DELETE | /users/:id  | Delete a user by ID.             |
 
-### Configurando o arquivo `.env`
+---
 
-Na raiz do projeto (onde está o backend), crie um arquivo `.env` com o seguinte conteúdo ou copie o arquivo `.env.example` e renomeie para `.env`:
+### *📝 Request Examples*  
 
-```env
-MONGO_URI=mongodb://localhost:27017/nomedobanco
-PORT=3000
-```
-⚠️ Substitua nomedobanco pelo nome desejado para o seu banco de dados MongoDB.
+#### *1. Create User (POST)*  
+*Endpoint:* POST /users  
+*Request Body:*  
+json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "age": 30
+}
 
-Passos para executar
+*Response:*  
+json
+{
+  "_id": "507f191e810c19729de860ea",
+  "name": "John Doe",
+  "email": "john@example.com",
+  "age": 30
+}
 
-Clone o repositório:
-```bash
-git clone https://github.com/Vieirinha122/CRUD_MONGO.git
-cd CRUD_MONGO
-```
 
-Instale as dependências do backend:
-```bash
-npm install
-```
-Crie o arquivo .env conforme as instruções acima.
+#### *2. List Users (GET)*  
+*Endpoint:* GET /users  
+*Response:*  
+json
+[
+  {
+    "_id": "507f191e810c19729de860ea",
+    "name": "John Doe",
+    "email": "john@example.com",
+    "age": 30
+  }
+]
 
-Inicie o servidor backend:
-```bash
-npm run dev
-```
-Em outro terminal, vá para o diretório frontend e instale as dependências:
 
-```bash
-cd frontend
-npm install
-```
-Inicie o servidor frontend:
+#### *3. Update User (PUT)*  
+*Endpoint:* PUT /users/:id  
+*Request Body:*  
+json
+{
+  "age": 31
+}
 
-```bash
-npm run dev
-```
+*Response:*  
+json
+{
+  "_id": "507f191e810c19729de860ea",
+  "name": "John Doe",
+  "email": "john@example.com",
+  "age": 31
+}
 
-⚠️ A aplicação estará disponível no navegador no endereço gerado no terminal do frontend (geralmente http://localhost:5173).
+
+#### *4. Delete User (DELETE)*  
+*Endpoint:* DELETE /users/:id  
+*Response:*  
+json
+{
+  "message": "User deleted successfully."
+}
+
+
+---
+
+## *❓ FAQ*  
+
+### *1. How to connect to MongoDB Atlas?*  
+Modify MONGO_URI in .env to:  
+env
+MONGO_URI=mongodb+srv://<user>:<password>@cluster0.example.mongodb.net/<dbname>?retryWrites=true&w=majority
+
+
+### *2. How to test the API?*  
+Use tools like:  
+- *Postman*  
+- *Insomnia*  
+- *curl* (Example: curl -X GET http://localhost:3000/users)  
+
+---
+
+## *📌 Conclusion*  
+This project is a practical introduction to MongoDB with Node.js. Feel free to contribute or expand its features!  
+
+🔗 *Repository:* [github.com/Vieirinha122/CRUD_MONGO](https://github.com/Vieirinha122/CRUD_MONGO)  
+
+--- 
+
+This documentation is *straightforward and concise*, ideal for a basic CRUD project. If the project grows, consider adding:  
+- *Architecture Documentation* (C4 Model)  
+- *Advanced Tutorials* (e.g., Authentication, Pagination)  
+- *Deployment Guide* (Docker, AWS, etc.)
